@@ -78,15 +78,15 @@ In this project, you will build the retrieve data from a public api, add in a fa
 
   The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-* [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic. **You do not need to use useLocalStorage to complete this task! localStorage is not necessary for this project. Simply reproduce all functionality for the useForm custom hook to complete.**
+* [X] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic. **You do not need to use useLocalStorage to complete this task! localStorage is not necessary for this project. Simply reproduce all functionality for the useForm custom hook to complete.**
 
-* [ ] Try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
+* [X] Try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 ### Testing the Checkout Form
-* [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
-* [ ] Fill out code necessary to test that that Checkout form renders without errors.
-* [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
-* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
+* [X] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
+* [X] Fill out code necessary to test that that Checkout form renders without errors.
+* [X] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
+* [X] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
 ## Important Notes:
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
@@ -118,8 +118,21 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a class-based and a functional component?
 
+Class-based components and functional components are capable of achieving the same things, however the way that this happens is different.  Functional components are simply javascript functions that accept props as arguments and return React elements. Unlike class components they do not have their own state, but they can receive state passed through props.  Additionally, functional components do not have access to lifecycle methods and instead must use useEffect to achieve a similar outcome.
+
+Class-based components extend the React.Component object and require a render function which returns a React element.  Class-based components are stateful and can use setState(), React.Component also gives them access to lifecycle methods
+
 2. When does a componentWillMount function be called? What about a componentDidUpdate?
+
+componentWillMount is called as soon as a component is finished rendering.  ComponentDidUpdate is called every time the state of the component changes.
 
 3. Define stateful logic.
 
+Stateful logic is logic using state that is built into a component.
+
 4. What are the three step of creating a successful test? What is done in each phase? 
+
+Arrange: render or setup the component being tested
+Act: execute our behavior (like clicking or typing)
+Assert: Get the response element and see if it is indeed what it should be
+
