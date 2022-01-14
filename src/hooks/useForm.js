@@ -6,10 +6,6 @@ const useForm = (initialFormValue)=>{
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   
     const handleChanges = (e)=>{
-      setValues({
-        ...values,
-        [e.target.name]: e.target.value
-      });
       setInput({
         ...input,
         [e.target.name]: e.target.value
@@ -18,7 +14,7 @@ const useForm = (initialFormValue)=>{
   
     const handleSubmit = (e)=>{
       e.preventDefault();
-      setValues(values);
+      setValues(input);
       setShowSuccessMessage(true);
       setInput(initialFormValue);
     }
